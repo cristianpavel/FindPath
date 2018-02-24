@@ -1,0 +1,37 @@
+TEMA 3 - POO
+Cristian Pavel - 324CB
+
+	Clasa principala e Maze. Aici am metodele pentru task1 si task2. Labi-
+rintul il retin folosind mostenitori ai clasei Cell. Pentru fiecare tip de
+celula am o clasa speciala. Creez matricea folosind-ma de doua factories. Prima
+imi bordeaza matricea cu FrontierCell, si a doua imi creeaza efectiv instante
+de celule. Am o clasa Human care ma ajuta sa ma deplasez in matrice in functie
+de orientarea eroului. In constructor fac o copie a matricei generate la ci-
+tire, ca sa fac matricea imuabila. 
+
+Task1:
+
+	Aleg pasul urmator printr-un comparator ce imi ia 2 celule si le ordo-
+neaza in functie de un nr de ordine. Nr-ul de ordine l-am ales astfel incat
+celulele Frontier si Wall sa fie mereu ultimele, celulele Free sa fie ordo-
+nate in ordinea numarului de vizitari si celula Out sa fie mereu prima. Pun
+vecinii celulei in care se afla omul intr-o lista, in ordinea RFLB, si o sor-
+tez. Collections.sort imi pastreaza ordinea de insertie in caz de egalitate 
+(conform documentatiei). Deci la sfarsit voi avea pe prima pozitie celula
+urmatoare. Continui procesul pana ajung la portalul de iesire. Exceptiile sunt
+aruncate daca incerc sa vizitez o celula Frontier sau Wall. Ma folosesc de
+metoda visit din Cell ca sa cresc nrVisits, sa arunc exceptii sau sa imi
+dau seama de celula portal de iesire. La sfarsit ma folosesc de metoda unvisit
+ca sa aduc matricea la starea initiala.
+
+Task2:
+
+	Algoritmul lui Lee cu conditia ca celulele sa fie vizitate in ordinea
+RFLB. Construiesc drumul printr-un HashMap in care, la fiecare iteratie, pun
+perechi celula -> parinte celula. Astfel ma asigur ca afisez drumul minim care
+pastreaza ordinea RFLB.
+
+
+THE END
+		
+
